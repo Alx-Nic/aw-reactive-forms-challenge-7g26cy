@@ -1,0 +1,16 @@
+<form [formGroup]="myForm">
+  <div>
+    <input
+      name="description"
+      type="text"
+      placeholder="A description for the link"
+      formControlName="description"
+    />
+    <span *ngIf="fDescription.errors?.required && fDescription.touched">
+      Description is required
+    </span>
+    <span *ngIf="fDescription.errors?.minlength && fDescription.touched">
+      Description is too short
+    </span>
+  </div>
+</form>
